@@ -1,0 +1,98 @@
+# ---------------------------------------------------------------------------
+# Lab members. Add a new person by copying a block. `photo` is optional —
+# without one, the site renders a monogram tile.
+# ---------------------------------------------------------------------------
+
+pi:
+  name: "Qingchu Jin, PhD"
+  name_native: "金擎初"
+  role: "Principal Investigator · Faculty Scientist I"
+  affiliation: "Center for Molecular Medicine, MaineHealth Institute for Research"
+  photo: "static/img/qingchu-jin.png"
+  email: "Qingchu.Jin@mainehealth.org"
+  links:
+    - {label: "Google Scholar", url: "https://scholar.google.com/citations?user=v0mrZC4AAAAJ&hl=en"}
+    - {label: "ORCID", url: "https://orcid.org/0000-0002-2293-1805"}
+    - {label: "LinkedIn", url: "https://www.linkedin.com/in/qingchu-jin"}
+  education:
+    - {degree: "BS", detail: "Biomedical Engineering, Shanghai Jiao Tong University (上海交通大学)"}
+    - {degree: "PhD", detail: "Biomedical Engineering, Johns Hopkins University School of Medicine"}
+    - {degree: "Research Scientist", detail: "Roux Institute at Northeastern University"}
+  bio:
+    - >
+      Dr. Qingchu Jin is a Faculty Scientist I at the MaineHealth Institute for Research.
+      He received his B.S. in Biomedical Engineering from Shanghai Jiao Tong University
+      (2013) and his Ph.D. from Johns Hopkins University School of Medicine in Biomedical
+      Engineering, in the field of computational modeling of cardiomyocyte
+      electrophysiology (2021).
+    - >
+      After graduation he worked at Bristol Myers Squibb as a Research Investigator
+      developing quantitative systems pharmacology models for cardiovascular drugs (2022),
+      then at the Roux Institute at Northeastern University as Associate Research Scientist
+      and Research Scientist (2023–2026).
+    - >
+      His research sits at the intersection of AI, medicine, and biology: machine learning
+      models and computational approaches for clinical and biological questions, with a
+      focus on surgical, cardiovascular, and obesity research. He is actively building his
+      research team.
+
+members:
+  - name: "Skyler Morse"
+    role: "UMaine GSBSE Rotating Graduate Student"
+    photo: "static/img/skyler-morse.jpg"
+    focus: "Real-time ML risk assessment for cardiothoracic ICU patients"
+    bio: >
+      Skyler Morse is a Biomedical Engineering Ph.D. student from UMaine GSBSE rotating in
+      the Jin Lab, where he is helping with the real-time machine-learning risk assessment
+      project for cardiothoracic ICU patients. He received his B.S. in Biomedical
+      Engineering from UMaine Orono in 2025 with minors in Anthropology, Bioinstrumentation,
+      and Mathematics. His research interests include computational and image analysis,
+      specifically of histology and MR images. Skyler is primarily a member of the
+      CompuMAINE lab at UMaine Orono, led by Dr. Andre Khalil, where he works on multiscale
+      anisotropic analysis of perivascular adipose tissue from abdominal aortic aneurysms,
+      in collaboration with Dr. Lucy Liaw at MHIR.
+
+  - name: "Tabarak Al Musawi"
+    role: "Tufts Maine Track Medical Student"
+    photo: "static/img/tabarak-al-musawi.jpg"
+    focus: "Preoperative prediction of intraoperative transfusion need (HEART)"
+    bio: >
+      Tabarak Al Musawi is an MD candidate at the Tufts University School of Medicine in the
+      Maine Track program. She is part of the HEART project, working with Dr. Jin and Dr.
+      Hicks to develop a predictive AI model that uses preoperative variables to predict
+      intraoperative transfusion need. She earned her B.A. in Biochemistry with a minor in
+      Arabic at Bowdoin College, where she worked in Dr. Horch's lab characterizing the role
+      of the Toll receptor–Spaetzle ligand in neuroplasticity in the Mediterranean field
+      cricket. She then worked as a medical laboratory scientist at Mercy lab in Portland,
+      Maine.
+
+  - name: "Patrick Doyle"
+    role: "Tufts Maine Track Medical Student"
+    photo: "static/img/patrick-doyle.jpg"
+    focus: "AI-driven readmission analytics for cardiothoracic ICU patients"
+    bio: >
+      Patrick is a medical student in the Tufts University School of Medicine's Maine Track
+      Program. He received his B.S. in Biology from Boston College and his M.S. from Tufts
+      University. Before medical school, Patrick worked at the Dana-Farber/Brigham Cancer
+      Center's Department of Radiation Oncology as a research coordinator, primarily on a
+      department-wide database and biorepository study. He is developing AI-driven
+      predictive analytics for readmission in cardiothoracic ICU patients.
+
+alumni: []
+
+# Appointments, awards, service — rendered as a compact CV panel.
+cv:
+  awards:
+    - {year: "2023", text: "Biophysical Journal Postdoctoral Reviewer Program"}
+    - {year: "2022", text: "Student Research Achievement Award, Biophysical Society Annual Meeting"}
+    - {year: "2020", text: "Star Research Achievement Award, Society of Critical Care Medicine Meeting"}
+    - {year: "2019–2020", text: "Gakenheimer Fellowship, Institute for Computational Medicine, Johns Hopkins University"}
+    - {year: "2019", text: "Young Investigator Award, AHA Resuscitation Science Symposium"}
+    - {year: "2017", text: "Summa cum laude (Graduation with Honor of Shanghai), Shanghai Jiao Tong University"}
+  grants:
+    - {year: "2025", text: "MaineHealth Bonfire Fund — Key Personnel"}
+    - {year: "2025", text: "National a2 Pilot Award, JHAITC / NIA — Co-Investigator (Senior Personnel)"}
+  service:
+    - {label: "Journal reviewer", text: "Nature Communications, Biophysical Journal, BMJ Digital Health & AI, Journal of the American Medical Informatics Association, Frontiers in Cardiovascular Medicine"}
+    - {label: "Conference reviewer", text: "IEEE BHI"}
+    - {label: "Professional membership", text: "Association for Computing Machinery"}

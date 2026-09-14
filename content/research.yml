@@ -1,0 +1,114 @@
+# ---------------------------------------------------------------------------
+# Research programs. Each entry renders as a card on the home page and a
+# full section on research.html.
+# ---------------------------------------------------------------------------
+
+intro: >
+  The past decade has seen extraordinary advances in AI, driven by rapid progress in
+  computing infrastructure. At the same time, medicine and biology have entered an era
+  of enormous data availability: hospitals collect massive, high-resolution clinical
+  data streams, while modern biological research generates large-scale multi-omics
+  datasets. These developments create remarkable opportunities — and fundamental
+  challenges. In healthcare, AI operates in high-stakes environments where uncertainty
+  matters. In biology, high-dimensional multi-omics data require models that not only
+  predict, but phenotype samples, identify trajectories, and uncover mechanism. The Jin
+  Lab works at the intersection of these domains.
+
+programs:
+  - id: "ai-health"
+    kicker: "Program 01"
+    title: "AI for Healthcare"
+    lede: "Multimodal, real-time machine learning that turns ICU data streams into decisions clinicians can trust."
+    accent: "cyan"
+    body:
+      - >
+        Clinical data are complex, multimodal, and dynamic. Electronic health records,
+        physiological waveforms, laboratory measurements, and imaging together form a
+        longitudinal portrait of patient health. We develop multimodal, real-time machine
+        learning models that integrate these diverse data streams to assess patient risk
+        and monitor disease progression.
+      - >
+        A central focus is safe AI. Even highly accurate models are imperfect, and in
+        medicine a single incorrect decision can have serious consequences. We develop
+        approaches that incorporate uncertainty quantification and confidence estimation
+        at the individual patient level, so that predictions arrive with an honest
+        statement of how much they should be trusted.
+      - >
+        Beyond predicting outcomes, we build causal machine learning models that estimate
+        the effect of treatment strategies. Unlike predictive models that forecast what
+        will happen, causal models evaluate what may happen under different interventions —
+        moving AI closer to personalized treatment planning and real-world clinical
+        decision support.
+    tags: ["Multimodal ML", "Real-time inference", "Uncertainty quantification", "Causal inference", "Critical care"]
+    figure:
+      src: "static/img/fig-cardiac-surgery.png"
+      title: "Figure 1 — Cardiac surgery risk, multimodal vs. STS calculator"
+      caption: >
+        Performance comparison between the Roux–MMC multimodal model and the Society of
+        Thoracic Surgeons (STS) risk calculator for predicting postoperative outcomes in
+        cardiac surgery patients. The Roux–MMC model incorporates both preoperative and
+        intraoperative data, whereas the STS calculator uses preoperative variables only.
+        Discrimination is evaluated by area under the receiver operating characteristic
+        curve (AUROC).
+    projects:
+      - name: "HEART — Healthcare Enabled by Artificial Intelligence in Real Time"
+        where: "Cardiovascular ICU, Maine Medical Center"
+        detail: "Real-time multimodal monitoring of recovery after cardiac surgery, including readmission risk and intraoperative transfusion need."
+      - name: "Causal ML for severe hyponatremia"
+        where: "Medical ICU, Maine Medical Center"
+        detail: "Hybrid AI + mechanistic models that predict post-treatment serum sodium to support correction strategies."
+
+  - id: "comp-bio"
+    kicker: "Program 02"
+    title: "Computational Biology"
+    lede: "Early-life multi-omics signatures that forecast developmental trajectories — and explain them."
+    accent: "amber"
+    body:
+      - >
+        We study developmental trajectories using early-life multi-omics data. A key
+        direction is modeling childhood obesity growth trajectories from early-life
+        multi-omics signatures: how do we robustly phenotype distinct growth trajectory
+        patterns, is there an early-life signature that predicts the future pattern, and
+        what is the mechanism behind it?
+      - >
+        To address these questions we assembled a wide spectrum of omics data from a
+        longitudinal cohort — genomics, methylation, transcriptomics, and lipidomics.
+        Accurate early prediction of growth pattern could enable proactive, personalized
+        lifestyle and pharmacological intervention before obesity is established.
+      - >
+        This work is conducted in collaboration with A*STAR in Singapore, the Roux
+        Institute at Northeastern University, and the Van Andel Institute, using the
+        GUSTO birth cohort dataset.
+    tags: ["Multi-omics integration", "DNA methylation", "Trajectory phenotyping", "Longitudinal models", "Metabolic health"]
+    figure:
+      src: "static/img/fig-growth-trajectory.png"
+      title: "Figure 3 — Predicting metabolic phenotype from day-10 methylation"
+      caption: >
+        Preliminary longitudinal analysis of 24 Trim28+/D9 heterozygous mutant mice. Obese
+        and lean phenotypes were defined at week 16 from lean and fat mass measurements.
+        Day-10 DNA methylation array data were used to predict later metabolic phenotype:
+        in a leave-one-out cross-validation framework, the first principal component of a
+        PCA on methylation correctly classified 21 of 24 mice.
+    projects:
+      - name: "Growth trajectory phenotyping in the GUSTO cohort"
+        where: "A*STAR · Van Andel Institute · Roux Institute"
+        detail: "Robust phenotyping of childhood growth patterns and discovery of predictive early-life multi-omics signatures."
+
+# Cross-cutting figure shown alongside the hyponatremia project
+extra_figures:
+  - src: "static/img/fig-hyponatremia.png"
+    title: "Figure 2 — Treatment-effect modeling in severe hyponatremia"
+    caption: >
+      Predictive modeling of treatment effects in patients with severe hyponatremia. Left:
+      the longitudinal structure of the data, including sodium measurements before and after
+      treatment initiation. Right: performance of a hybrid model combining an AI model with a
+      mechanistic model, comparing predicted with observed change in serum sodium.
+    program: "ai-health"
+
+approach:
+  title: "How we work"
+  principles:
+    - {title: "Embedded in care", text: "Projects are designed with ICU clinicians and cardiothoracic surgeons, on data from the units where the model will be deployed."}
+    - {title: "Uncertainty first", text: "Every model reports patient-level confidence. A prediction without a calibrated error bar is not a deliverable."}
+    - {title: "Mechanism matters", text: "Hybrid models pair learned components with mechanistic structure so results remain interpretable to the people who use them."}
+    - {title: "Open and reproducible", text: "Code, preprints, and evaluation protocols are shared so results can be checked and reused."}

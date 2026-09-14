@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Research{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="kicker reveal">Research</p>
+    <h1 class="page-head__title reveal" style="--d: .08s">Models that are accurate, safe, interpretable, and biologically meaningful.</h1>
+    <p class="page-head__lede reveal" style="--d: .16s">{{ research.intro }}</p>
+    <nav class="jump reveal" style="--d: .24s" aria-label="Jump to program">
+      {% for p in research.programs %}
+      <a href="#{{ p.id }}">{{ p.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</section>
+
+{% for p in research.programs %}
+<section class="section program{% if loop.index0 % 2 == 1 %} section--alt{% endif %}" id="{{ p.id }}" data-accent="{{ p.accent }}">
+  <div class="wrap">
+    <header class="program__head reveal">
+      <p class="kicker">{{ p.kicker }}</p>
+      <h2 class="section__title">{{ p.title }}</h2>
+      <p class="program__lede">{{ p.lede }}</p>
+      <ul class="tags">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+    </header>
+
+    <div class="program__grid">
+      <div class="program__prose reveal">
+        {% for para in p.body %}<p>{{ para }}</p>{% endfor %}
+
+        <h3 class="program__sub">Active projects</h3>
+        <ul class="projects">
+          {% for pr in p.projects %}
+          <li>
+            <span class="projects__name">{{ pr.name }}</span>
+            <span class="projects__where">{{ pr.where }}</span>
+            <span class="projects__detail">{{ pr.detail }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="program__figs">
+        <figure class="fig reveal">
+          <img src="{{ p.figure.src | asset }}" alt="{{ p.figure.title }}" loading="lazy">
+          <figcaption><strong>{{ p.figure.title }}</strong> {{ p.figure.caption }}</figcaption>
+        </figure>
+        {% for f in research.extra_figures %}
+        {% if f.program == p.id %}
+        <figure class="fig reveal">
+          <img src="{{ f.src | asset }}" alt="{{ f.title }}" loading="lazy">
+          <figcaption><strong>{{ f.title }}</strong> {{ f.caption }}</figcaption>
+        </figure>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+<section class="section">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="kicker">Method</p>
+      <h2 class="section__title">{{ research.approach.title }}</h2>
+    </header>
+    <div class="approach">
+      {% for a in research.approach.principles %}
+      <div class="approach__item reveal" style="--d: {{ loop.index0 * 0.07 }}s">
+        <span class="approach__num">0{{ loop.index }}</span>
+        <h4>{{ a.title }}</h4>
+        <p>{{ a.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta__inner reveal">
+    <h2>Want to work on this?</h2>
+    <p>{{ join.lede }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ 'join.html' | asset }}">Open positions<span class="btn__arrow">→</span></a>
+      <a class="btn btn--ghost" href="{{ 'publications.html' | asset }}">Read the papers</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

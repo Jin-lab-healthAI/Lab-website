@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% block title %}{{ site.tagline }}{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="hero__inner">
+    <p class="hero__eyebrow reveal">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      {{ site.department }} · {{ site.institution }}
+    </p>
+
+    <h1 class="hero__title">
+      {% for line in site.hero_lines %}
+      <span class="hero__line" style="--i: {{ loop.index0 }}">{{ line }}</span>
+      {% endfor %}
+    </h1>
+
+    <p class="hero__blurb reveal" style="--d: .5s">{{ site.hero_blurb }}</p>
+
+    <div class="hero__actions reveal" style="--d: .65s">
+      <a class="btn btn--primary" href="{{ 'research.html' | asset }}">See the research<span class="btn__arrow">→</span></a>
+      <a class="btn btn--ghost" href="{{ 'join.html' | asset }}">Open positions</a>
+    </div>
+
+    <div class="hero__trace" aria-hidden="true">
+      <svg viewBox="0 0 1200 140" preserveAspectRatio="none">
+        <path class="trace trace--ghost" d="M0,70 H180 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H420 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H660 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H900 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H1200"/>
+        <path class="trace trace--live" d="M0,70 H180 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H420 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H660 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H900 l14,-46 l10,88 l12,-62 l16,34 l10,-14 H1200"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats__grid">
+    {% for s in site.stats %}
+    <div class="stat reveal" style="--d: {{ loop.index0 * 0.08 }}s">
+      <div class="stat__value">{{ s.value }}</div>
+      <div class="stat__label">{{ s.label }}</div>
+      <div class="stat__sub">{{ s.sub }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="research">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="kicker">Research</p>
+      <h2 class="section__title">Two programs, one method: make the model honest about what it knows.</h2>
+      <p class="section__lede">{{ research.intro }}</p>
+    </header>
+
+    <div class="prog-grid">
+      {% for p in research.programs %}
+      <article class="prog reveal" data-accent="{{ p.accent }}" style="--d: {{ loop.index0 * 0.1 }}s">
+        <a class="prog__link" href="{{ 'research.html' | asset }}#{{ p.id }}" aria-label="{{ p.title }}"></a>
+        <div class="prog__media">
+          <img src="{{ p.figure.src | asset }}" alt="{{ p.figure.title }}" loading="lazy">
+        </div>
+        <div class="prog__body">
+          <p class="prog__kicker">{{ p.kicker }}</p>
+          <h3 class="prog__title">{{ p.title }}</h3>
+          <p class="prog__lede">{{ p.lede }}</p>
+          <ul class="tags">
+            {% for t in p.tags %}<li>{{ t }}</li>{% endfor %}
+          </ul>
+          <span class="prog__more">Read more <span class="btn__arrow">→</span></span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="approach">
+      {% for a in research.approach.principles %}
+      <div class="approach__item reveal" style="--d: {{ loop.index0 * 0.07 }}s">
+        <span class="approach__num">0{{ loop.index }}</span>
+        <h4>{{ a.title }}</h4>
+        <p>{{ a.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="publications">
+  <div class="wrap">
+    <header class="section__head section__head--row reveal">
+      <div>
+        <p class="kicker">Selected work</p>
+        <h2 class="section__title">Recent publications</h2>
+      </div>
+      <a class="btn btn--ghost" href="{{ 'publications.html' | asset }}">All publications</a>
+    </header>
+
+    <ol class="publist">
+      {% for p in selected_pubs %}
+      <li class="pub reveal" style="--d: {{ loop.index0 * 0.05 }}s">
+        <span class="pub__year">{{ p.year }}</span>
+        <div class="pub__body">
+          <h3 class="pub__title">
+            {% if p.get('doi') %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}
+          </h3>
+          <p class="pub__authors">{{ p.authors | highlight(pubs.highlight_authors) }}</p>
+          <p class="pub__venue">{{ p.venue }}</p>
+        </div>
+        <span class="pub__type pub__type--{{ p.type }}">{{ p.type }}</span>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="people">
+  <div class="wrap">
+    <header class="section__head section__head--row reveal">
+      <div>
+        <p class="kicker">People</p>
+        <h2 class="section__title">The team</h2>
+      </div>
+      <a class="btn btn--ghost" href="{{ 'people.html' | asset }}">Full profiles</a>
+    </header>
+
+    <div class="pi-card reveal">
+      <div class="pi-card__photo">
+        <img src="{{ people.pi.photo | asset }}" alt="{{ people.pi.name }}" loading="lazy">
+      </div>
+      <div class="pi-card__body">
+        <p class="kicker">Principal Investigator</p>
+        <h3>{{ people.pi.name }} <span class="pi-card__native">{{ people.pi.name_native }}</span></h3>
+        <p class="pi-card__role">{{ people.pi.role }}</p>
+        <p>{{ people.pi.bio[0] }}</p>
+        <div class="pi-card__links">
+          {% for l in people.pi.links %}<a href="{{ l.url }}" rel="noopener">{{ l.label }} ↗</a>{% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="team-strip">
+      {% for m in people.members %}
+      <a class="mini reveal" href="{{ 'people.html' | asset }}#{{ m.name | slug }}" style="--d: {{ loop.index0 * 0.07 }}s">
+        {% if m.get('photo') %}
+        <img src="{{ m.photo | asset }}" alt="{{ m.name }}" loading="lazy">
+        {% else %}
+        <span class="mini__mono">{{ m.name | initials }}</span>
+        {% endif %}
+        <span class="mini__name">{{ m.name }}</span>
+        <span class="mini__role">{{ m.role }}</span>
+      </a>
+      {% endfor %}
+      <a class="mini mini--open reveal" href="{{ 'join.html' | asset }}">
+        <span class="mini__mono">+</span>
+        <span class="mini__name">You?</span>
+        <span class="mini__role">Postdoc · PhD · MD · undergrad</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="news">
+  <div class="wrap news-wrap">
+    <header class="section__head reveal">
+      <p class="kicker">News</p>
+      <h2 class="section__title">Lab log</h2>
+    </header>
+    <ol class="timeline">
+      {% for n in news %}
+      <li class="tl reveal" style="--d: {{ loop.index0 * 0.06 }}s">
+        <span class="tl__date">{{ n.date }}</span>
+        <span class="tl__tag">{{ n.tag }}</span>
+        <p class="tl__text">
+          {% if n.get('link') %}<a href="{{ n.link }}" rel="noopener">{{ n.text }}</a>{% else %}{{ n.text }}{% endif %}
+        </p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="collaborators">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="kicker">Collaborators</p>
+      <h2 class="section__title">Where the work happens</h2>
+    </header>
+    <div class="collab-grid">
+      {% for c in site.collaborators %}
+      <div class="collab reveal" style="--d: {{ loop.index0 * 0.05 }}s">
+        <h4>{{ c.name }}</h4>
+        <p>{{ c.detail }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta__inner reveal">
+    <h2>{{ join.headline }}</h2>
+    <p>{{ join.lede }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="mailto:{{ join.cta_email }}?subject={{ join.cta_subject | urlencode }}">Email the lab<span class="btn__arrow">→</span></a>
+      <a class="btn btn--ghost" href="{{ 'join.html' | asset }}">Positions & how to apply</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

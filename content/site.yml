@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------------------
+# Global site settings. Edit this file to change anything in the header,
+# footer, hero, or metadata. No HTML knowledge required.
+# ---------------------------------------------------------------------------
+
+lab_name: "Jin Lab"
+lab_name_short: "JIN LAB"
+tagline: "Trustworthy AI for the bedside and the bench."
+hero_lines:                     # each line is animated in one after another
+  - "Trustworthy AI"
+  - "for medicine"
+  - "and biology."
+hero_blurb: >
+  We build computational frameworks that are not only accurate, but safe,
+  interpretable, and biologically meaningful — machine learning that clinicians
+  can act on, and models that explain the biology underneath.
+institution: "MaineHealth Institute for Research"
+institution_url: "https://mhir.org/"
+department: "Center for Molecular Medicine"
+department_url: "https://mhir.org/research/center-for-molecular-medicine/"
+legacy_page: "https://mhir.org/center-for-molecular-medicine/labs-staff/qingchu-jin-phd/"
+
+# Base URL path the site is served from.
+# "" for a custom domain or user/org page (jinlab.org, <user>.github.io)
+# "/repo-name" for a GitHub project page (<user>.github.io/repo-name)
+base_url: ""
+site_url: "https://qingchujin.github.io"
+
+meta:
+  description: >
+    The Jin Lab at the MaineHealth Institute for Research develops trustworthy
+    machine learning for critical care, cardiovascular surgery, and multi-omics
+    developmental biology.
+  keywords: "machine learning, critical care, cardiac surgery, causal inference, uncertainty quantification, multi-omics, MaineHealth"
+  author: "Qingchu Jin"
+  og_image: "static/img/qingchu-jin.png"
+
+contact:
+  email: "Qingchu.Jin@mainehealth.org"
+  phone: "207.396.8100"
+  address_lines:
+    - "MaineHealth Institute for Research"
+    - "81 Research Drive"
+    - "Scarborough, ME 04074"
+  map_url: "https://maps.google.com/?q=81+Research+Drive+Scarborough+ME+04074"
+
+links:
+  - label: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=v0mrZC4AAAAJ&hl=en"
+    icon: "scholar"
+  - label: "ORCID"
+    url: "https://orcid.org/0000-0002-2293-1805"
+    icon: "orcid"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/qingchu-jin"
+    icon: "linkedin"
+  - label: "Email"
+    url: "mailto:Qingchu.Jin@mainehealth.org"
+    icon: "mail"
+
+nav:
+  - {label: "Research", href: "research.html"}
+  - {label: "Publications", href: "publications.html"}
+  - {label: "People", href: "people.html"}
+  - {label: "Join", href: "join.html"}
+
+# Short, factual stat strip under the hero. Keep these honest and current.
+stats:
+  - {value: "2", label: "research programs", sub: "AI for healthcare · computational biology"}
+  - {value: "4", label: "clinical collaborations", sub: "Maine Medical Center ICUs & cardiac surgery"}
+  - {value: "3", label: "partner institutes", sub: "A*STAR · Northeastern Roux · Van Andel"}
+  - {value: "2026", label: "lab established", sub: "Center for Molecular Medicine, MHIR"}
+
+collaborators:
+  - {name: "MaineHealth Maine Medical Center", detail: "Cardiovascular & medical ICU, cardiothoracic surgery"}
+  - {name: "Roux Institute, Northeastern University", detail: "Multimodal clinical machine learning"}
+  - {name: "A*STAR, Singapore", detail: "GUSTO birth cohort, early-life multi-omics"}
+  - {name: "Van Andel Institute", detail: "Epigenetics of developmental trajectories"}
+  - {name: "Johns Hopkins University", detail: "Institute for Computational Medicine"}
+  - {name: "UMaine GSBSE", detail: "Graduate training in biomedical engineering"}
+
+footer_note: "Built as a static site — fork it, edit the YAML, push."

@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------------------
+# "Join the lab" page.
+# ---------------------------------------------------------------------------
+
+headline: "We are building the team."
+lede: >
+  The lab is new, the clinical partnerships are live, and the data are already flowing.
+  If you want your models to reach an ICU rather than a leaderboard, get in touch.
+
+openings:
+  - title: "Postdoctoral Fellow"
+    status: "Open"
+    detail: >
+      Multimodal and real-time clinical machine learning, uncertainty quantification, or
+      causal inference for treatment strategies. Strong Python and a track record of
+      first-author work expected. Clinical data experience welcome but not required.
+  - title: "Graduate Students"
+    status: "Rotations welcome"
+    detail: >
+      Through UMaine GSBSE and affiliated programs. Projects span ICU time-series
+      modeling and early-life multi-omics trajectory analysis.
+  - title: "Medical Students & Residents"
+    status: "Open"
+    detail: >
+      Short, well-scoped projects within the HEART program — from preoperative risk
+      prediction to readmission analytics — designed to finish as a paper.
+  - title: "Undergraduate & Summer Researchers"
+    status: "Open"
+    detail: >
+      Through the MHIR Summer Undergraduate Research Program and direct arrangements.
+      Programming experience in Python or R is the main prerequisite.
+
+what_we_look_for:
+  - "Curiosity about the clinical or biological question, not only the model."
+  - "Comfort with messy, longitudinal, multimodal data."
+  - "Care about calibration, uncertainty, and failure modes."
+  - "Willingness to talk to clinicians and to be told your model is wrong."
+
+how_to_apply: >
+  Email a CV, a short statement of research interests, and (for postdoctoral applicants)
+  two references. Mention a project or paper from this site that interests you — it makes
+  for a much better first conversation.
+
+cta_email: "Qingchu.Jin@mainehealth.org"
+cta_subject: "Prospective lab member"
+
+resources:
+  - {label: "MHIR postdoctoral training", url: "https://mhir.org/education-training/postdoctoral-training/"}
+  - {label: "MHIR graduate programs", url: "https://mhir.org/education-training/graduate-student-programs/"}
+  - {label: "Summer undergraduate research", url: "https://mhir.org/education-training/summer-undergraduate-research-program/"}
+  - {label: "MaineHealth careers", url: "https://mhir.org/about-mhir/careers/"}

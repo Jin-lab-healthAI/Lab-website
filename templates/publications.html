@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Publications{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="kicker reveal">Publications</p>
+    <h1 class="page-head__title reveal" style="--d: .08s">{{ publications | length }} entries, newest first.</h1>
+    <p class="page-head__lede reveal" style="--d: .16s">{{ pubs.note | safe }}</p>
+
+    <div class="pubtools reveal" style="--d: .24s">
+      <div class="filters" role="group" aria-label="Filter by type">
+        <button class="chip is-active" data-filter="all" type="button">All</button>
+        {% for t in pub_types %}
+        <button class="chip" data-filter="{{ t }}" type="button">{{ t }}</button>
+        {% endfor %}
+      </div>
+      <label class="search">
+        <span class="sr-only">Search publications</span>
+        <input type="search" id="pub-search" placeholder="Search title, author, venue…" autocomplete="off">
+      </label>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {% for year, items in pub_years %}
+    <div class="pubyear" data-year="{{ year }}">
+      <h2 class="pubyear__label">{{ year }}</h2>
+      <ol class="publist publist--full">
+        {% for p in items %}
+        <li class="pub reveal" data-type="{{ p.type }}"
+            data-search="{{ (p.title ~ ' ' ~ p.authors ~ ' ' ~ p.venue ~ ' ' ~ p.get('topic', '')) | lower }}">
+          <span class="pub__year">{{ p.year }}</span>
+          <div class="pub__body">
+            <h3 class="pub__title">
+              {% if p.get('doi') %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>
+              {% elif p.get('url') %}<a href="{{ p.url }}" rel="noopener">{{ p.title }}</a>
+              {% else %}{{ p.title }}{% endif %}
+            </h3>
+            <p class="pub__authors">{{ p.authors | highlight(pubs.highlight_authors) }}</p>
+            <p class="pub__venue">{{ p.venue }}{% if p.get('note') %} <span class="pub__note">· {{ p.note }}</span>{% endif %}</p>
+            <div class="pub__meta">
+              {% if p.get('doi') %}<a class="pub__doi" href="https://doi.org/{{ p.doi }}" rel="noopener">doi:{{ p.doi }}</a>{% endif %}
+              {% if p.get('pdf') %}<a href="{{ p.pdf }}" rel="noopener">PDF</a>{% endif %}
+              {% if p.get('code') %}<a href="{{ p.code }}" rel="noopener">Code</a>{% endif %}
+              {% if p.get('topic') %}<span class="pub__topic">{{ p.topic }}</span>{% endif %}
+            </div>
+          </div>
+          <span class="pub__type pub__type--{{ p.type }}">{{ p.type }}</span>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+    <p class="empty" id="pub-empty" hidden>No publications match that filter.</p>
+  </div>
+</section>
+
+{% endblock %}

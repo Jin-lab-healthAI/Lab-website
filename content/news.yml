@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# News items. Newest first. `tag` is a short label; `link` is optional.
+# ---------------------------------------------------------------------------
+
+items:
+  - date: "2026"
+    tag: "Lab"
+    text: "The Jin Lab opens in the Center for Molecular Medicine at the MaineHealth Institute for Research. We are recruiting at every level."
+    link: "join.html"
+
+  - date: "Oct 2025"
+    tag: "Conference"
+    text: "Our hybrid AI + mechanistic framework for predicting post-treatment serum sodium in hyponatremia was presented at IEEE EMBS BHI 2025."
+    link: "https://doi.org/10.1109/BHI67747.2025.11269505"
+
+  - date: "2025"
+    tag: "Funding"
+    text: "Co-Investigator on a National a2 Pilot Award (JHAITC / NIA), and Key Personnel on a MaineHealth Bonfire Fund award."
+
+  - date: "Feb 2025"
+    tag: "Preprint"
+    text: "Development and validation of machine learning models for adverse events after cardiac surgery — multimodal pre- plus intraoperative models outperform the STS risk calculator across three cohorts."
+    link: "https://doi.org/10.1101/2025.02.24.25322811"
+
+  - date: "2025"
+    tag: "Patent"
+    text: "U.S. patent application filed on feature-based machine learning model prediction (with R. Winslow)."
+
+  - date: "2023"
+    tag: "Paper"
+    text: "Biophysical Journal: estimating the probability of early afterdepolarizations and predicting arrhythmic risk in long QT syndrome type 1."
+    link: "https://doi.org/10.1016/j.bpj.2023.09.001"

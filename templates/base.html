@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.lab_name }}{% endblock %} · {{ site.lab_name }}</title>
+<meta name="description" content="{{ site.meta.description }}">
+<meta name="keywords" content="{{ site.meta.keywords }}">
+<meta name="author" content="{{ site.meta.author }}">
+<meta property="og:title" content="{{ site.lab_name }} — {{ site.tagline }}">
+<meta property="og:description" content="{{ site.meta.description }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.site_url }}{{ site.meta.og_image | asset }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ 'static/css/style.css' | asset }}">
+<link rel="icon" href="{{ 'static/img/favicon.svg' | asset }}" type="image/svg+xml">
+<script>
+  // Set the theme before first paint to avoid a flash.
+  (function () {
+    try {
+      var t = localStorage.getItem('jinlab-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="bg-field" aria-hidden="true">
+  <div class="bg-blob bg-blob--1"></div>
+  <div class="bg-blob bg-blob--2"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="{{ 'index.html' | asset }}">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" role="presentation"><path d="M0 12h8l2-7 3 14 3-11 3 8 2-4h16" /></svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">{{ site.lab_name }}</span>
+        <span class="brand__sub">{{ site.institution }}</span>
+      </span>
+    </a>
+
+    <nav class="nav__links" aria-label="Main">
+      {% for item in site.nav %}
+      <a href="{{ item.href | asset }}" {% if page_name == item.href %}class="is-active" aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="nav__tools">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <a class="btn btn--ghost nav__cta" href="{{ 'join.html' | asset }}">Join the lab</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav__progress" id="nav-progress" aria-hidden="true"></div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  {% for item in site.nav %}
+  <a href="{{ item.href | asset }}">{{ item.label }}</a>
+  {% endfor %}
+  <a href="mailto:{{ site.contact.email }}">Contact</a>
+</div>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__lab">{{ site.lab_name }}</div>
+      <p class="footer__tagline">{{ site.tagline }}</p>
+      <div class="footer__links">
+        {% for l in site.links %}
+        <a href="{{ l.url }}" rel="noopener">{{ l.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="footer__col">
+      <h3>Visit</h3>
+      <address>
+        {% for line in site.contact.address_lines %}{{ line }}<br>{% endfor %}
+      </address>
+      <a class="footer__map" href="{{ site.contact.map_url }}" rel="noopener">Directions →</a>
+    </div>
+    <div class="footer__col">
+      <h3>Contact</h3>
+      <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a><br>
+      <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a>
+    </div>
+    <div class="footer__col">
+      <h3>Affiliations</h3>
+      <a href="{{ site.institution_url }}" rel="noopener">{{ site.institution }}</a><br>
+      <a href="{{ site.department_url }}" rel="noopener">{{ site.department }}</a><br>
+      <a href="{{ site.legacy_page }}" rel="noopener">Institutional profile</a>
+    </div>
+  </div>
+  <div class="footer__base">
+    <span>© {{ year }} {{ site.lab_name }}, {{ site.institution }}.</span>
+    <span class="footer__note">{{ site.footer_note }}</span>
+  </div>
+</footer>
+
+<script src="{{ 'static/js/main.js' | asset }}"></script>
+</body>
+</html>

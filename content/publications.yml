@@ -1,0 +1,83 @@
+# ---------------------------------------------------------------------------
+# Publications. Newest first; the site groups them by year automatically.
+#   type: journal | preprint | conference | patent
+#   Names listed in `highlight_authors` are bolded wherever they appear.
+#   Optional: doi, url, pdf, code, note, selected (true = shown on home page)
+# ---------------------------------------------------------------------------
+
+highlight_authors: ["Q Jin", "Qingchu Jin"]
+
+note: >
+  A complete list is available on <a href="https://www.ncbi.nlm.nih.gov/myncbi/qingchu.jin.1/bibliography/public/">My NCBI</a>
+  and <a href="https://scholar.google.com/citations?user=v0mrZC4AAAAJ&hl=en">Google Scholar</a>.
+
+publications:
+  - title: "System and Method for Feature-Based Machine Learning (ML) Model Prediction"
+    authors: "R Winslow, Q Jin"
+    venue: "U.S. Patent Application No. 19/288,506"
+    year: 2025
+    type: patent
+    selected: true
+
+  - title: "Development and Validation of Machine Learning Models for Adverse Events after Cardiac Surgery"
+    authors: "Q Jin*, S Amal*, JB Rabb, et al."
+    venue: "medRxiv"
+    year: 2025
+    type: preprint
+    doi: "10.1101/2025.02.24.25322811"
+    note: "*Equal contribution"
+    selected: true
+    topic: "AI for Healthcare"
+
+  - title: "A Hybrid Learning Framework for Predicting Post-Treatment Serum Sodium in Patients with Hyponatremia"
+    authors: "GB Kshirsagar, R Hayden, et al., Q Jin"
+    venue: "2025 IEEE EMBS International Conference on Biomedical and Health Informatics (BHI), 1–11"
+    year: 2025
+    type: conference
+    doi: "10.1109/BHI67747.2025.11269505"
+    selected: true
+    topic: "AI for Healthcare"
+
+  - title: "Predictive Analytics in Cardiothoracic Care: Enhancing Outcomes with the Healthcare Enabled by Artificial Intelligence in Real Time (HEART) Project"
+    authors: "F Mazhude, RS Kramer, A Hicks, Q Jin, et al."
+    venue: "Journal of Maine Medical Center 6(2), 11"
+    year: 2024
+    type: journal
+    doi: "10.46804/2641-2225.1195"
+    selected: true
+    topic: "AI for Healthcare"
+
+  - title: "Applications of AI in Multi-modal Imaging for Cardiovascular Disease"
+    authors: "M Milosevic, Q Jin, A Singh, S Amal"
+    venue: "Frontiers in Radiology 3, 1294068"
+    year: 2024
+    type: journal
+    doi: "10.3389/fradi.2023.1294068"
+    topic: "AI for Healthcare"
+
+  - title: "Estimating the Probability of Early Afterdepolarizations and Predicting Arrhythmic Risk Associated with Long QT Syndrome Type 1 Mutations"
+    authors: "Q Jin, JL Greenstein, RL Winslow"
+    venue: "Biophysical Journal 122(20), 4042–4056"
+    year: 2023
+    type: journal
+    doi: "10.1016/j.bpj.2023.09.001"
+    selected: true
+    topic: "Cardiac Electrophysiology"
+
+  - title: "Computational Signatures for Post-cardiac Arrest Trajectory Prediction: Importance of Early Physiological Time Series"
+    authors: "BH Kim*, HT Nguyen*, Q Jin*, et al."
+    venue: "Anaesthesia Critical Care & Pain Medicine 41(1), 101015"
+    year: 2022
+    type: journal
+    doi: "10.1016/j.accpm.2021.101015"
+    note: "*Equal contribution"
+    topic: "AI for Healthcare"
+
+  - title: "Estimating Ectopic Beat Probability with Simplified Statistical Models that Account for Experimental Uncertainty"
+    authors: "Q Jin, JL Greenstein, RL Winslow"
+    venue: "PLoS Computational Biology 17(10), e1009536"
+    year: 2021
+    type: journal
+    doi: "10.1371/journal.pcbi.1009536"
+    selected: true
+    topic: "Cardiac Electrophysiology"
