@@ -23,8 +23,9 @@ legacy_page: "https://mhir.org/center-for-molecular-medicine/labs-staff/qingchu-
 # Base URL path the site is served from.
 # "" for a custom domain or user/org page (jinlab.org, <user>.github.io)
 # "/repo-name" for a GitHub project page (<user>.github.io/repo-name)
-base_url: ""
-site_url: "https://qingchujin.github.io"
+
+base_url: "/Lab-website"
+site_url: "https://jin-lab-healthai.github.io"
 
 meta:
   description: >
